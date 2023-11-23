@@ -12,6 +12,7 @@ function App() {
   }, [ dispatch ])
   return (
     <ul>
+      {console.log(countries)}
       { countries.map((item) => {
         return (
 
