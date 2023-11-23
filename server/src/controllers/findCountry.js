@@ -1,25 +1,25 @@
 
 const { Op } = require("sequelize");
-const {Country} = require("../db")
+const { Country } = require("../db")
 module.exports = async (req, res) => {
 
     const { name } = req.params;
+
+    console.log(req.body);
+    console.log(name);
+    if (!name) return res.json("Busca los países por nombre")
     try {
-        console.log(name);
-        const country = await Country.findOne({
-            where:{
+        const country = await Country.findAll({
+            where: {
                 name: {
-                    [Op.iLike]: "Kenya",
-                    [Op.contains]:{
-                        name:{
-                            common:{[Op.iLike]:'%Kenya%',},
-                        },
-                    },
+                    [ Op.or ]: [
+                        { common: { [ Op.iLike ]: `${name}%` } },
+                        { official: { [ Op.iLike ]: `${name}%` } }
+                    ],
                 },
             },
         });
-        console.log(country);
-        if (!country) {
+        if (!country.length) {
             return res.status(404).json("No se encontraron coincidencias")
         }
         return res.status(200).json(country)

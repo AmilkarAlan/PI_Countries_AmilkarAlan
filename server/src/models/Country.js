@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
       primaryKey: true,
     },
     name: {
-      type: DataTypes.JSONB,
+      type: DataTypes.JSONB({common:DataTypes.STRING,official:DataTypes.STRING}),
       allowNull: false,
     },
     continent: {

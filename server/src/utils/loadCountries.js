@@ -1,5 +1,5 @@
 const { Country } = require('../db.js');
-const apiFetch = require("../utils/apiFetch");
+const apiFetch = require("./apiFetch.js");
 
 module.exports = async () => {
     try {
@@ -27,7 +27,8 @@ module.exports = async () => {
                 }
             });
         }
-
+        const countries = await Country.findAll();
+        return countries;
         
     } catch (error) {
         throw error;

@@ -1,27 +1,19 @@
 const { Router } = require("express");
-const getCountries = require("../controllers/getCountries");
-const loadCountries = require("../controllers/loadCountries");
 const findCountry = require("../controllers/findCountry");
+const countriesDb = require("../controllers/countriesDb");
+const postActivity = require("../controllers/postActivity");
+const delActivity = require("../controllers/delActivity");
+const getActivities = require("../controllers/getActivities");
 
 
 const router = Router();
+// Countries
+router.get('/', countriesDb);
+router.get('/country:name', findCountry);
 
-router.get('/allcountries', async (req, res) => {
-    try {
-        const dbcountries = await getCountries();
-        if(dbcountries.length === 0) {
-            await loadCountries();
-        }
-        const countries = await getCountries();
-        return res.status(200).json(countries)
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json('Error en el servidor');
-    }
-});
-
-router.get('/country/:name', (req, res)=>{
-    findCountry(req,res)
-});
+// Activities
+router.get('/activities', getActivities)
+router.post('/activities', postActivity)
+router.delete('/activities:id', delActivity)
 
 module.exports = router;
