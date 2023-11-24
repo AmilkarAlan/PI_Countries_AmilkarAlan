@@ -1,26 +1,20 @@
-import { useEffect } from 'react';
-import './App.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { getAllCountries } from './redux/action';
+import './App.css';
+import Home from './routes/Home/Home';
+import { Route, Routes } from 'react-router-dom'
+import LandingPage from './routes/LandingPage';
 
 
 function App() {
-  const dispatch = useDispatch();
-  const countries = useSelector(state => state.countries)
-  useEffect(() => {
-    dispatch(getAllCountries())
-  }, [ dispatch ])
-  return (
-    <ul>
-      {console.log(countries)}
-      { countries.map((item) => {
-        return (
 
-            <li key={item.id}><p>{ item.name.common }</p></li>
-      
-        )
-      }) }
-    </ul>
+  return (
+    <>
+
+      <Routes >
+        <Route path='/landing' element={ <LandingPage /> } />
+        <Route path='/home' element={ <Home /> } />
+      </Routes>
+    </>
+
   )
 }
 
