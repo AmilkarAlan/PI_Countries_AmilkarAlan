@@ -3,12 +3,8 @@ const { Op } = require("sequelize");
 const { Country } = require("../db")
 module.exports = async (req, res) => {
 
-    const { name } = req.params;
-
-    console.log(req.body);
-    console.log(name);
-    if (!name) return res.json("Busca los países por nombre")
-    try {
+    const { name } = req.body;
+    if (name) try {
         const country = await Country.findAll({
             where: {
                 name: {

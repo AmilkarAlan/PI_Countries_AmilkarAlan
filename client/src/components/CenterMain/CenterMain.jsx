@@ -5,14 +5,9 @@ import style from "./CenterMain.module.css"
 
 const CenterMain = () => {
   return (
-    <div className={style.main_grid}>
+    <div className={style.main_CenterGrid}>
         <BannerCountry />
         <ActivitiesMain />
-        <ActivitiesMain />
-        <ActivitiesMain />
-        <ActivitiesMain />
-        <ActivitiesMain />
-
     </div>
   )
 }

@@ -1,0 +1,7 @@
+.main_asideContainer {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}

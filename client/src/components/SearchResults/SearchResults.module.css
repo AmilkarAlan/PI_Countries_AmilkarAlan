@@ -1,0 +1,11 @@
+.main_results {
+    height: 80%;
+    overflow-y: scroll;
+    border: solid 1px;
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+}
+
+.active {
+    opacity: 1;
+}
