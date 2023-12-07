@@ -1,4 +1,5 @@
-const { Activity } = require('../db.js');
+const { Activity, Country } = require('../db.js');
+
 
 module.exports = async (req, res) => {
     try {
@@ -14,6 +15,8 @@ module.exports = async (req, res) => {
                 duration,
             }
         })
+        const countries = await Country.findAll()
+        activity.addCountries(countries)
         const activities = await Activity.findAll();
         return res.status(200).json(activities)
     } catch (error) {

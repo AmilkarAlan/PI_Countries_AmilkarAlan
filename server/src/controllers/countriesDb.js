@@ -1,9 +1,9 @@
-const {Country} = require("../db");
+const {Country, Activity} = require("../db");
 const loadCountries = require("../utils/loadCountries");
 
 module.exports = async (req, res) => {
     try {
-        let countries = await Country.findAll();
+        let countries = await Country.findAll({includes: Activity});
         if (countries.length === 0) {
             countries = await loadCountries();
             return res.status(201).json(countries)

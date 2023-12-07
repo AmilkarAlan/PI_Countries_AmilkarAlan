@@ -4,7 +4,6 @@ const initialState = {
     countries: [],
     activities: [],
     findCountry: [],
-    detailCountry: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -32,12 +31,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 findCountry: action.payload,
-            }
-        case actionsType.DETAILS_COUNTRY:
-            
-            return {
-                ...state,
-                detailCountry: {...state.detailCountry, [action.payload.id]:action.payload}
             }
         default:
             return state

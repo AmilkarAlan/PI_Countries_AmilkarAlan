@@ -5,8 +5,9 @@ import { useEffect } from 'react';
 import { getAllCountries } from './redux/action';
 import LandingPage from './routes/LandingPage/LandingPage';
 import Home from './routes/Home/Home';
-import CenterMain from './components/CenterMain/CenterMain';
+import MainPage from './components/Main/MainPage/MainPage';
 import Details from './routes/Details/Details'
+import SearchPage from "./routes/Search/SearchPage"
 
 
 
@@ -21,10 +22,11 @@ function App() {
   return (
     <>
       <Routes >
-        <Route path='/landing' element={ <LandingPage /> } />
-        <Route path='/' element={ <Home /> } >
-          <Route path="countries" element={ <CenterMain /> } />
-          <Route path="countries/:id" element={ <Details /> } />
+        <Route path='/' element={ <LandingPage /> } />
+        <Route path='/countries' element={ <Home /> } >
+          <Route path="main" element={ <MainPage /> } />
+          <Route path='search' element={<SearchPage/>}/>
+          <Route path="detail/:id" element={ <Details /> } />
         </Route>
       </Routes>
     </>

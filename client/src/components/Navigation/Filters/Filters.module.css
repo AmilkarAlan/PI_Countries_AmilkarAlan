@@ -1,0 +1,42 @@
+.filterContainer {
+    margin: 8px 16px;
+}
+
+.filterGrid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 8px;
+}
+
+.filters button {
+    color: inherit;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 16px;
+    background-color: hsla(0, 0%, 100%, .07);
+    transition: background .3s ease-in;
+    font-size: 0.8rem;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: hsla(0, 0%, 100%, .3);
+}
+
+.alphaFilter, .continentFilter {
+    display: flex;
+    gap: 8px;
+    overflow-x: hidden;
+}

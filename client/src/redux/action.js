@@ -32,23 +32,6 @@ export const findCountry = (search) => {
 
 }
 
-export const countryDetail = (id) => {
-    return async (dispatch) => {
-        try {
-    
-            const {data} = await axios.get(`http://localhost:3001/countries/country/${id}`);
-            dispatch({
-                type: actionsTypes.DETAILS_COUNTRY,
-                payload: data,
-            });
-            
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-}
-
 export const postActivitie = (activitie) => {
     return async (dispatch) => {
         try {

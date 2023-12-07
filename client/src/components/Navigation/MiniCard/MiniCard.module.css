@@ -1,0 +1,49 @@
+.main_miniCard {
+    display: grid;
+    gap: 8px 12px;
+    grid-template-columns: auto 1fr;
+    transition: background .3s ease-in-out;
+    border-radius: 8px;
+
+}
+
+.main_miniCard:hover{
+    background-color: hsla(0,0%,100%,.07);
+}
+
+.imgContainer{
+    height: 48px;
+    width: 48px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.namesContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+    justify-content: center;  
+}
+
+
+
+.officialName {
+    font-size: .876rem;
+    color:#a7a7a7;
+}
+
+.commonName{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    
+}

@@ -1,6 +1,6 @@
 
 const { Op } = require("sequelize");
-const { Country } = require("../db")
+const { Country, Activity } = require("../db")
 module.exports = async (req, res) => {
 
     const { name } = req.body;
@@ -14,6 +14,7 @@ module.exports = async (req, res) => {
                     ],
                 },
             },
+            include: Activity,
         });
         if (!country.length) {
             return res.status(404).json("No se encontraron coincidencias")

@@ -1,0 +1,19 @@
+.main_searchBoxContainer {
+    height: 120px;
+    border-radius: 8px;
+    background-color: #121212;
+    padding: 8px 12px;
+}
+
+.main_searchBoxContainer a{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 40px;
+    color: #b3b3b3;
+    transition: color .3s ease-in;
+}
+
+.main_searchBoxContainer a:hover{
+    color: inherit;
+}

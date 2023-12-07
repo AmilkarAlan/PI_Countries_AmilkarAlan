@@ -1,5 +1,5 @@
 import { Outlet} from "react-router-dom"
-import AsideBar from "../../components/AsideBar/AsideBar"
+import Navigation from "../../components/Navigation/NavBar/NavBar"
 import InfoSideBar from "../../components/InfoSideBar/InfoSideBar"
 import style from "./Home.module.css"
 
@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className={style.main_grid}>
-      <AsideBar />
+      <Navigation />
       <Outlet/>
       <InfoSideBar />
     </div>

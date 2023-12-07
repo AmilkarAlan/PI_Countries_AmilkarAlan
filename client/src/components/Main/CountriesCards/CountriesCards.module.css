@@ -1,0 +1,5 @@
+.countriesContainer {
+ display: flex;
+ gap: 18px;
+ overflow-x: scroll;
+}

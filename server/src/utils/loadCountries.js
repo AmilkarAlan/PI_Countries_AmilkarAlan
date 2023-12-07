@@ -1,4 +1,4 @@
-const { Country } = require('../db.js');
+const { Country, Activity} = require('../db.js');
 const apiFetch = require("./apiFetch.js");
 
 module.exports = async () => {
@@ -27,7 +27,8 @@ module.exports = async () => {
                 }
             });
         }
-        const countries = await Country.findAll();
+        const countries = await Country.findAll({include: Activity,});
+
         return countries;
         
     } catch (error) {
