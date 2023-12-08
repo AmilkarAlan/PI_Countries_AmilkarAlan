@@ -24,7 +24,7 @@ function App() {
       <Routes >
         <Route path='/' element={ <LandingPage /> } />
         <Route path='/countries' element={ <Home /> } >
-          <Route path="main" element={ <MainPage /> } />
+          <Route path="/countries" element={ <MainPage /> } />
           <Route path='search' element={<SearchPage/>}/>
           <Route path="detail/:id" element={ <Details /> } />
         </Route>

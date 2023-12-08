@@ -5,21 +5,23 @@ import SearchIcon from '../../../icons/SearchIcon/SearchIcon';
 
 const ButtonsNav = () => {
 
-  
+
   return (
     <div className={ style.main_searchBoxContainer }>
-      <div className={style.homeButonContainer}>
-        <Link to="main">
-          <HomeIcon />
-          <span>Home</span>
-        </Link>
-      </div>
-      <div className={style.searchButonContainer}>
-        <Link to="search">
-          <SearchIcon/>
-          <span>Search</span>
-        </Link>
-      </div>
+      <ul className={style.buttonsContainer}>
+        <li className={ style.homeButonContainer }>
+          <Link to="/countries">
+            <HomeIcon />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li className={ style.searchButonContainer }>
+          <Link to="search">
+            <SearchIcon />
+            <span>Search</span>
+          </Link>
+        </li>
+      </ul>
 
     </div>
   )

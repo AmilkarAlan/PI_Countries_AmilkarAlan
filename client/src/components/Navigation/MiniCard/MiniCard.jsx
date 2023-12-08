@@ -8,9 +8,12 @@ const MiniCard = ({ image, officialName, commonName }) => {
                 <img src={ image } alt={ commonName } />
             </div>
             <div className={ style.namesContainer }>
+                <div className={ style.namesBox }>
+                    <p className={ style.commonName }>{ commonName }</p>
+                    <p className={ style.officialName }>{ officialName }</p>
+                </div>
 
-                <p className={ style.commonName }>{ commonName }</p>
-                <p className={ style.officialName }>{ officialName }</p>
+
 
 
             </div>

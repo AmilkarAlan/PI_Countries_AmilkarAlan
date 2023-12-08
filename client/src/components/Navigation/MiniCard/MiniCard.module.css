@@ -1,22 +1,47 @@
 .main_miniCard {
-    display: grid;
-    gap: 8px 12px;
-    grid-template-columns: auto 1fr;
-    transition: background .3s ease-in-out;
-    border-radius: 8px;
+    
+        display: grid;
+        gap: 8px 12px;
+        grid-template-columns: auto 1fr;
+        grid-auto-rows: auto 1fr auto;
+        grid-template-rows: 48px;
+        margin-inline-start: calc(min(var(--ylx-folder-depth, 0), 5)*16px);
+
+
+        position: relative;
+        border-radius: 6px;
+        min-block-size: 56px;
+        z-index: 0;
+        color: var(#fff, #000000);
+        padding: 8px;
+        --animation-speed: 0ms;
+        --animation-ease: ease;
+        --bg-inset-change-press: -4px;
+        cursor: pointer;
+    
 
 }
 
-.main_miniCard:hover{
-    background-color: hsla(0,0%,100%,.07);
+.main_miniCard:hover {
+    background-color: hsla(0, 0%, 100%, .07);
 }
 
-.imgContainer{
-    height: 48px;
-    width: 48px;
+.imgContainer {
     display: flex;
     gap: 12px;
     align-items: center;
+    grid-column: 1;
+    width: 48px;
+    height: 48px;
+
+    align-items: flex-end;
+    align-self: flex-end;
+    background-color: var(--extracted-entity-color, #282828);
+    box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
+    flex-shrink: 0;
+    overflow: hidden;
+
+    border-radius: 4px;
 }
 
 .imgContainer img {
@@ -26,24 +51,37 @@
     object-position: center center;
 }
 
-.namesContainer{
+.namesContainer {
+    grid-column-end: -1;
+    gap: 12px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.namesBox{
     display: flex;
     flex-direction: column;
     gap: 2px;
     align-items: flex-start;
-    justify-content: center;  
 }
-
-
 
 .officialName {
     font-size: .876rem;
-    color:#a7a7a7;
+    color: #a7a7a7;
+    overflow-wrap: anywhere;
+    font-weight: 400;
+    margin: block;
+    word-break: break-all;
 }
 
-.commonName{
+.commonName {
+    overflow-wrap: anywhere;
+    outline: none;
+    text-decoration: none;
+    word-break: break-all;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    
+
 }

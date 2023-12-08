@@ -1,7 +1,8 @@
 .main_results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     height: 80%;
-    overflow-y: scroll;
-    border: solid 1px;
     transition: opacity .3s ease-in-out;
     opacity: 0;
 }

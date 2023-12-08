@@ -21,17 +21,14 @@ const SearchPage = () => {
     setInput(value);
   }
 
-  const handleClick = (id) => {
-    dispatch(countryDetail(id))
-  }
 
   const resultsToDisplay = search ? results : [];
+
   return (
-    <div>
+    <div className={style.searchMain}>
       <SearchBar search={ search } handleChange={ handleChange } />
       <SearchResults
-        handleClick={ handleClick }
-        results={ results } />
+        results={ resultsToDisplay } />
     </div>
 
   )

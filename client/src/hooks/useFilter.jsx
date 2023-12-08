@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 const useFilter = (countries) => {
     const [alphaFilter, setAlphaFilter]= useState('none');
     const [continentFilter, setContinentFilter] = useState('all');
+    const [independentFilter, setIndependentFilter] = useState('none')
     const [filteredCountries, setFilteredCountries] = useState([]);
 
     useEffect(()=>{
@@ -18,23 +19,28 @@ const useFilter = (countries) => {
             return country.continent === continentFilter;
         }
 
+        const filterIndependet = (country) =>{
+            if (independentFilter === "none") return true;
+            return country.landlocked === (independentFilter === 'true');
+        }
+
         let newCountries = [...countries];
-
-        newCountries = newCountries.filter(filterContinent);
-
+        newCountries = newCountries.filter(filterContinent).filter(filterIndependet);
         if(alphaFilter === "asc") {
             newCountries.sort(compareName);
         } else if (alphaFilter === "desc"){
             newCountries.sort(compareName).reverse();
         }
-
         setFilteredCountries(newCountries);
-    },[alphaFilter, continentFilter, countries])
+
+
+    },[alphaFilter, continentFilter, countries, independentFilter])
 
     return {
         filteredCountries,
         setAlphaFilter,
-        setContinentFilter
+        setContinentFilter,
+        setIndependentFilter
     }
 }
 

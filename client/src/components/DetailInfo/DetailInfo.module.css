@@ -1,0 +1,39 @@
+.infoContainer{
+    height: 100%;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 16px;
+}
+
+.bordersContainer{
+    width: fit-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #121212;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.regionInfo{
+    width: fit-content;
+    height: max-content;
+    background-color: #121212;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.geographicInfo{
+    width: fit-content;
+    height: max-content;
+    background-color: #121212;
+    padding: 8px 12px;
+    border-radius: 8px;
+    gap: 8px;
+}

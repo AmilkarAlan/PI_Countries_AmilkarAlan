@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import style from "./SearchResults.module.css"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import MiniCard from "../../Navigation/MiniCard/MiniCard";
 
-const SearchResults = ({ results, handleClick }) => {
+const SearchResults = ({ results }) => {
   const [ active, setActive ] = useState(false);
 
   useEffect(() => {
@@ -15,8 +16,8 @@ const SearchResults = ({ results, handleClick }) => {
     <div className={ active ? (style.main_results + " " + style.active) : style.main_results }>
       { active ? (results.map((item, index) => {
         return (
-          <Link onClick={()=>handleClick(item.id)}to={`/countries/detail/${item.id}`} key={ index } >
-            <p >{ item.name.common }</p>
+          <Link  to={ `/countries/detail/${item.id}` } key={ index } >
+            < MiniCard image={ item.image } officialName={ item.name.official } commonName={ item.name.common } />
           </Link>
 
         )

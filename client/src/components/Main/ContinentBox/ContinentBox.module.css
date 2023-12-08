@@ -2,11 +2,13 @@
     container-type: inline-size;
     display: flex;
     flex: 1 1 auto;
-    flex-basis: 100%;
     flex-direction: column;
     margin-bottom: 16px;
     max-width: 100%;
     min-height: 300px;
-    min-width: min-content;
-    position: relative;
+    min-width: var(--min-container-width);
+}
+
+.continentInfo{
+    margin-bottom: 16px;
 }

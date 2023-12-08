@@ -2,13 +2,15 @@ import CountriesBox from "../CountriesBox/CountriesBox"
 import style from "./NavBar.module.css"
 import ButtonsNav from "../ButtonsNav/ButtonsNav"
 
-const AsideBar = () => {
+const NavBar = () => {
   return (
-    <div className={style.main_asideContainer}>
-      <ButtonsNav />
-      <CountriesBox />
+    <div className={ style.main_asideContainer }>
+      <nav className={style.navBar}>
+        <ButtonsNav />
+        <CountriesBox />
+      </nav>
     </div>
   )
 }
 
-export default AsideBar
+export default NavBar

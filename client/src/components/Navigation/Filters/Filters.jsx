@@ -1,26 +1,38 @@
 import style from "./Filters.module.css"
-const Filters = ({ setAlphaFilter, setContinentFilter, setCurrentPage }) => {
+const Filters = ({ setAlphaFilter, setContinentFilter, setCurrentPage, setIndependetFilter }) => {
 
 
-  const handleAlphaFilterChange = (event) => {
-    const newAlphaFilter = event.target.value;
-    setAlphaFilter(newAlphaFilter);
+  const handleAlphaFilterChange = (e) => {
+    const newValue = e.target.value
+
+    setAlphaFilter(newValue);
   };
 
 
-  const handleContinentFilterChange = (event) => {
-    const newContinentFilter = event.target.value;
-    setContinentFilter(newContinentFilter);
+  const handleContinentFilterChange = (e) => {
+    const newValue = e.target.value;
+    setContinentFilter(newValue);
     setCurrentPage(1)
   };
+
+  const handleIndependentFilter = (e) => {
+    const newValue = e.target.value;
+
+    setIndependetFilter(newValue);
+  }
 
   const alphaFilter = [
     { title: "No-order", value: "none" },
     { title: "A-Z", value: "asc" },
     { title: "Z-A", value: "desc" },
   ]
-  
-  
+
+  const independentFilt = [
+    { title: "None", value: "none" },
+    { title: "Landlocked", value: true },
+    { title: "With coastline", value: false },
+  ]
+
   const continentFilter = [
     { title: "All", value: "all" },
     { title: "Americas", value: "Americas" },
@@ -33,33 +45,70 @@ const Filters = ({ setAlphaFilter, setContinentFilter, setCurrentPage }) => {
 
   return (
 
-    <div className={ style.filterContainer }>
-      <div className={ style.filterGrid }>
-        <div className={ style.filters }>
-          <div className={ style.alphaFilter }>
-            <p>Alphabetical order: </p>
-            { alphaFilter.map((label, index) => {
-              return (
-                <button key={ index } value={ label.value } onClick={ handleAlphaFilterChange }>{ label.title }</button>
+    <div>
 
-              )
-            }) }
-          </div>
-          <div className={ style.continentFilter }>
-            <p>Continent Order</p>
-          { continentFilter.map((label, index) => {
-              return (
-                <button key={ index } value={ label.value } onClick={ handleContinentFilterChange }>{ label.title }</button>
+      <div className={ style.filterContainer }>
+        <div className={ style.buttonsContainer }>
 
-              )
-            }) }
-          </div>
+
+          { alphaFilter.map((alpha, index) => {
+            return (
+              <div className={ style.buttonsPad } key={ index }>
+                <button key={ index } value={ alpha.value } onClick={ handleAlphaFilterChange }>
+
+                  { alpha.title }
+
+                </button>
+              </div>
+            )
+          }) }
+
 
         </div>
+      </div>
+      <div className={ style.filterContainer + " " + style.scroll }>
+        <div className={ style.buttonsContainer }>
 
+
+          { continentFilter.map((continent, index) => {
+            return (
+              <div className={ style.buttonsPad } key={ index }>
+
+                <button value={ continent.value } onClick={ handleContinentFilterChange }>
+
+                  { continent.title }
+
+                </button>
+              </div>
+
+            )
+          }) }
+
+        </div>
+      </div>
+      <div className={ style.filterContainer }>
+        <div className={ style.buttonsContainer }>
+
+          { independentFilt.map((independent, index) => {
+            return (
+              <div className={ style.buttonsPad } key={ index }>
+                <button key={ index } value={ independent.value } onClick={ handleIndependentFilter }>
+
+                  { independent.title }
+
+                </button>
+              </div>
+            )
+          }) }
+
+        </div>
       </div>
 
     </div>
+
+
+
+
   );
 };
 

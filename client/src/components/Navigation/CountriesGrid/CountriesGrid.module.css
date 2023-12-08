@@ -1,7 +1,16 @@
 .main_countriesGrid{
+    height: 100%;
+    overscroll-behavior-y: contain;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-height: 100%;
     padding: 0px 8px 8px;
+    overflow: hidden!important;
 }
+
+.cardsContainer{
+    width: 279px;
+    height: 333px;
+    overflow-y: scroll;
+}
+

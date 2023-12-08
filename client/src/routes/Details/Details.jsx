@@ -13,10 +13,9 @@ const Details = () => {
   // const countryDet = country[ id ]
   const countryDet = country.find((country) => country.id === id)
 
-  console.log(countryDet);
   return (
     <div>
-      { countryDet ? <DetailMain countryDetail={countryDet}/> : "cargando" }
+      { countryDet ? <DetailMain countryDetail={countryDet} countries={country}/> : "cargando" }
     </div>
   )
 }

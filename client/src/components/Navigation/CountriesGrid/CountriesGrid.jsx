@@ -2,9 +2,10 @@
 import style from "./CountriesGrid.module.css"
 import MiniCard from "../MiniCard/MiniCard"
 import Pagination from "../Pagination/Pagination"
+import { Link } from "react-router-dom";
 
 
-const CountriesGrid = ({ filteredCountries, setCurrentPage, currentPage}) => {
+const CountriesGrid = ({ filteredCountries, setCurrentPage, currentPage }) => {
 
     const itemsPerPage = 10;
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -18,19 +19,32 @@ const CountriesGrid = ({ filteredCountries, setCurrentPage, currentPage}) => {
     }
     return (
         <div className={ style.main_countriesGrid }>
-            {
-                toShow.map((item, index) => {
-                    return (
-                        < MiniCard key={ index } image={ item.image } officialName={ item.name.official } commonName={ item.name.common } />
+            <div className={ style.cardsContainer }>
+                <div>
+                    <ul>
+                        {
+                            toShow.map((item, index) => {
+                                return (
+                                    <li key={ index }>
+                                        <Link to={ `detail/${item.id}` }>
+                                            < MiniCard image={ item.image } officialName={ item.name.official } commonName={ item.name.common } />
+                                        </Link>
+                                    </li>
 
-                    )
-                })
-            }
 
-            <Pagination 
-            handlePageChange={handlePageChange} 
-            totalPages={totalPages}
-            currentPage={currentPage}/>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+
+                <Pagination
+                    handlePageChange={ handlePageChange }
+                    totalPages={ totalPages }
+                    currentPage={ currentPage } />
+            </div>
+
+
         </div>
     )
 }
