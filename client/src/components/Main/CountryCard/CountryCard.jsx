@@ -4,7 +4,8 @@ const CountryCard = ({image, official, common, capital}) => {
   return (
     <div className={style.cardContainer}>
       <div className={style.imageContainer}>
-        <svg preserveAspectRatio='none' ><image href={image}></image></svg>
+        {/* <svg preserveAspectRatio='none' ><image href={image}></image></svg> */}
+        <img src={image} alt={common} />
       </div>
       <div className={style.infoContainer}>
         <p className={style.commonName}>{common}</p>

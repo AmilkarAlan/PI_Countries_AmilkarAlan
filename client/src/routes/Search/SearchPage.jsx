@@ -25,10 +25,12 @@ const SearchPage = () => {
   const resultsToDisplay = search ? results : [];
 
   return (
-    <div className={style.searchMain}>
+    <div className={ style.searchMain }>
+
       <SearchBar search={ search } handleChange={ handleChange } />
       <SearchResults
         results={ resultsToDisplay } />
+
     </div>
 
   )

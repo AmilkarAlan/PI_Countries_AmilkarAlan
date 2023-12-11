@@ -1,42 +1,62 @@
 .cardContainer {
     background: #181818;
     border-radius: 8px;
-    width: 100%;
-    padding:16px;
+    width: 150px;
+    height: 250px;
+    padding: 8px;
     margin: 8px;
-    /* display: grid;
-    grid-template-rows: 1fr .5fr; */
-    /* flex-direction: column;
-    justify-items: center; */
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
+.cardContainer:hover {
+    background-color: hsla(0, 0%, 100%, .07);
+    box-shadow: 1px 1px 5px #fff;
+}
+
 .imageContainer {
-    display: block;
-    margin-bottom: 16px;
-    height: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
     width: 100%;
+    height: 50%;
+    align-items: flex-end;
+    align-self: flex-end;
     overflow: hidden;
+    border-radius: 4px;
 }
 
-svg{
-    width: 100%;
-}
-image{
+img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center center;
 }
-
 
 .officialName {
-    font-size: .876rem;
-    color:#a7a7a7;
+    font-size: .6rem;
+    color: #a7a7a7;
 }
 
-.commonName{
-    font-size: 1rem;
+.commonName {
+    font-size: .8rem;
     font-weight: bold;
     color: #fff;
 }
 
-    
+.capital {
+    font-size: .6rem;
+    color: #a7a7a7;
+    font-weight: lighter;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cardContainer:hover .capital {
+    color: #fff;
+}

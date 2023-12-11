@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import DetailMain from "../../components/DetailMain/DetailMain";
+import style from "./Details.module.css"
 
 
 
@@ -14,7 +15,7 @@ const Details = () => {
   const countryDet = country.find((country) => country.id === id)
 
   return (
-    <div>
+    <div className={style.detail }>
       { countryDet ? <DetailMain countryDetail={countryDet} countries={country}/> : "cargando" }
     </div>
   )

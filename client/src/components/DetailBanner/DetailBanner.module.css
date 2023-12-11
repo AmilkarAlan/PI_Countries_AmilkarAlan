@@ -1,38 +1,38 @@
 .banner {
-    height: 360px;
-    border-radius: 0 0 8px 8px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
-    z-index: 1;
     background-color: #121212;
+}
+
+.imageContainer {
+    height: 100%;
+    width: 100%;
 
 }
 
-.banner img {
-    height: 100%;
+.imageContainer img{
     width: 100%;
-    position: absolute;
-    z-index: 1;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+
 
 }
 
 .namesDrop {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column-reverse;
     position: absolute;
-    z-index: 2;
-    backdrop-filter: blur(2px);
-    background-color: rgba(0, 0, 0, 0.123);
+    bottom: 0;
+    background: linear-gradient(0deg, rgb(3, 3, 3) 5%, rgba(41, 48, 40, 0.397) 50%, rgba(98, 102, 98, 0.144) 100%);
 }
 
 .names {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column-reverse;
     padding: 8px;
-    height: 50%;
-    background: rgb(3,3,3);
-    background: linear-gradient(0deg, rgba(3,3,3,1) 14%, rgba(41,48,40,0.8603816526610644) 50%, rgba(98, 102, 98, 0.171) 100%);
+    height: 100%;
 }

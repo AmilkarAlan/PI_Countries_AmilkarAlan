@@ -1,0 +1,6 @@
+.continentContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 12px;
+    gap: 16px;
+}

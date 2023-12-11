@@ -1,11 +1,9 @@
 .detailContainer{
     border-radius: 8px;
-    /* background-color: #121212; */
-    display: flex;
+    display: grid;
+    grid-template-rows:  1fr 1fr;
     position: relative;
-    flex-direction: column;
     gap: 8px;
-    padding: 0px 12px;
     height: 100%;
     width: 100%;
 }

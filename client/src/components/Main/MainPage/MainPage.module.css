@@ -1,11 +1,8 @@
 .main_CenterGrid {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 0px 12px;
-    background: rgb(40, 40, 40);
-    background: linear-gradient(0deg, rgba(40, 40, 40, 1) 5%, rgba(59, 55, 55, 0.8603816526610644) 50%, rgba(82, 141, 186, 0.3897934173669467) 100%);
-    overflow-y: scroll;
     border-radius: 8px;
     grid-area: main-view;
+    overflow-y: scroll;
+    background-color: rgba(59, 55, 55, 0.8603816526610644);
 }

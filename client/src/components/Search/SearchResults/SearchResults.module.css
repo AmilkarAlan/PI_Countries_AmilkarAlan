@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    height: 80%;
+    height: 100%;
     transition: opacity .3s ease-in-out;
     opacity: 0;
+    overflow-y: scroll;
 }
 
 .active {

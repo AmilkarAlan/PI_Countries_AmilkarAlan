@@ -1,6 +1,5 @@
 import DetailBanner from '../DetailBanner/DetailBanner'
 import DetailInfo from '../DetailInfo/DetailInfo'
-import ActiviesBox from "../ActivitiesBox/ActivitiesBox"
 import style from './DetailMain.module.css'
 
 const DetailMain = ({countryDetail, countries}) => {
@@ -20,7 +19,6 @@ const DetailMain = ({countryDetail, countries}) => {
         id={countryDetail.id} 
         landlocked={countryDetail.landlocked}
         countries={countries}/>
-        <ActiviesBox />
     </div>
   )
 }

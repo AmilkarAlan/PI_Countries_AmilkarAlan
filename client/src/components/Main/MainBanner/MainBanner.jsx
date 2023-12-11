@@ -1,6 +1,6 @@
 import style from "./MainBanner.module.css"
-import countriesBack from "../../../../public/countriesBackGround.png"
-const BannerCountry = ({countries}) => {
+import countriesBack from "/countriesBackGround.png"
+const BannerCountry = () => {
   return (
     <div  className={style.main_bannerContainer}>
       <img src={countriesBack}alt="" />

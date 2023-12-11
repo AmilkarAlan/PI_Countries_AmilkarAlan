@@ -1,17 +1,28 @@
 .main_bannerContainer {
-    height: 360px;
-    border-radius: 0 0 8px 8px;
+    height: 60%;
     position: relative;
+    display: flex;
+    transition: height .3s ease-in-out;
 }
 
 .main_bannerContainer img {
     height: 100%;
     width: 100%;
-    position: absolute;
-    z-index: -1;
 }
 
 .main_bannerContainer h1{
     z-index: 1;
+    position: absolute;
+}
+
+.main_bannerContainer::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    position: absolute;
+    background: rgb(40, 40, 40);
+    background: linear-gradient(0deg, rgba(59, 55, 55, 0.8603816526610644) 5%, rgba(59, 55, 55, 0.322) 50%, rgba(59, 55, 55, 0.158) 100%);
+    
 }
 
