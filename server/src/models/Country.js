@@ -51,5 +51,9 @@ module.exports = (sequelize) => {
       type:DataTypes.BOOLEAN,
       allowNull:false,
     },
+    demonyms:{
+      type:DataTypes.STRING,
+      allowNull:true
+    },
   },{timestamps: false});
 };

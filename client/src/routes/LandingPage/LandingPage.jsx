@@ -1,16 +1,16 @@
 import style from "./LandingPage.module.css"
 import backImage from "/countries.png"
-import {Link} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const LandingPage = () => {
   return (
     <div className={ style.landingContainer }>
       <img src={ backImage } alt="" />
-      <div className={ style.buttonInit }>
-        <Link to="/countries">
-        <button >Explore!</button>
-        </Link>
-      </div>
+      <NavLink className={ style.buttonInit } to="/countries">
+        <div className={ style.buttonContainer }>
+          <span >Explore!</span>
+        </div>
+      </NavLink>
     </div>
   )
 }

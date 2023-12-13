@@ -3,7 +3,7 @@ const loadCountries = require("../utils/loadCountries");
 
 module.exports = async (req, res) => {
     try {
-        const countries = await Country.findAll()
+        let countries = await Country.findAll({include: Activity})
         if (countries.length === 0) {
             countries = await loadCountries();
             return res.status(201).json(countries)

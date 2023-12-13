@@ -7,8 +7,8 @@ const {
 } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
-  logging: false, 
-  native: false, 
+  logging: false,
+  native: false,
 });
 const basename = path.basename(__filename);
 
@@ -24,17 +24,25 @@ fs.readdirSync(path.join(__dirname, '/models'))
 modelDefiners.forEach(model => model(sequelize));
 
 let entries = Object.entries(sequelize.models);
-let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
+let capsEntries = entries.map((entry) => [ entry[ 0 ][ 0 ].toUpperCase() + entry[ 0 ].slice(1), entry[ 1 ] ]);
 sequelize.models = Object.fromEntries(capsEntries);
 
 const { Country, Activity } = sequelize.models;
 
 
 
-Country.belongsToMany(Activity, { through: 'countries_activities' });
-Activity.belongsToMany(Country, { through: 'countries_activities' });
+Country.belongsToMany(Activity, {
+  through: 'country_activity',
+  foreignKey: "countryId",
+  otherKey: "activityId"
+});
+Activity.belongsToMany(Country, {
+  through: 'country_activity',
+  foreignKey: "activityId",
+  otherKey: "countryId"
+});
 
 module.exports = {
-  ...sequelize.models, 
-  conn: sequelize,     
+  ...sequelize.models,
+  conn: sequelize,
 };

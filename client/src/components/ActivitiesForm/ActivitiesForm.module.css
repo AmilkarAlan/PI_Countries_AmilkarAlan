@@ -1,0 +1,22 @@
+.formBox{
+    background-color: #121212;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 50%;
+    border-radius: 8px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+}
+
+.nameContainer{
+    display: flex;
+}

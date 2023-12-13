@@ -32,10 +32,10 @@ export const findCountry = (search) => {
 
 }
 
-export const postActivitie = (activitie) => {
+export const postActivitie = (activitie, idCountry) => {
     return async (dispatch) => {
         try {
-            const { data } = await axios.post('http://localhost:3001/countries/activities', activitie);
+            const { data } = await axios.post(`http://localhost:3001/countries/country/${idCountry}/activities`, activitie);
 
             dispatch({
                 type: actionsTypes.POST_ACTIVITIE,

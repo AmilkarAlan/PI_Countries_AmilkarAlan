@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .landingContainer img{
@@ -17,23 +18,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.buttonInit button {
+    background-color: #fff;
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    transition: all .5s ease-in-out;
+    text-decoration: none;
+    color: #000;
+}
+
+.buttonInit span {
+    height: 100%;
+    width: 100%;
     border: none;
     text-transform: uppercase;
-    font-family: 'Bellefair';
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.4rem;
     letter-spacing: 1.25px;
     text-align: center;
-    transition: all .5s ease-in-out;
+    
 }
 
-.buttonInit button:hover {
+.buttonInit:hover {
     box-shadow: 0 0 0 2rem hsla(0, 0%, 100%, 0.1);
-    mix-blend-mode: normal;}
+    mix-blend-mode: normal;
+    color: darkgoldenrod;
+}
+    

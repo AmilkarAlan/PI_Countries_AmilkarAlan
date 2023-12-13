@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
                     ],
                 },
             },
-            include: Activity,
+            
         });
         if (!country.length) {
             return res.status(404).json("No se encontraron coincidencias")

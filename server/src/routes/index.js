@@ -13,8 +13,9 @@ router.get('/', countriesDb);
 router.post('/country', findCountry);
 
 // Activities
-router.get('/activities', getActivities)
-router.post('/activities', postActivity)
-router.delete('/activities/:id', delActivity)
+
+router.get('/country/:idCountry/activities', getActivities)
+router.post('/country/:idCountry/activities', postActivity)
+router.delete('/country/:idCountry/activities/:id', delActivity)
 
 module.exports = router;

@@ -3,7 +3,7 @@ import MiniCard from "../../components/Navigation/MiniCard/MiniCard"
 import { Link } from "react-router-dom"
 import ActivitiesBox from "../ActivitiesBox/ActivitiesBox"
 
-const DetailInfo = ({ capital, continent, subregion, area, population, borders, id, landlocked, countries }) => {
+const DetailInfo = ({ capital, continent, subregion, area, population, borders, id, landlocked, countries, activities, setActiveForm }) => {
 
   return (
     <div className={ style.infoContainer }>
@@ -20,26 +20,35 @@ const DetailInfo = ({ capital, continent, subregion, area, population, borders, 
         </div>
       </div>
 
-      <div className={ style.bordersContainer }>
+      <div className={ style.bordersBox }>
         <h2>Borders</h2>
         <hr />
-        { typeof borders !== "string" ? borders.map((bord, index) => {
-          const countryBorder = countries.find((border) => border.id === bord)
-          return (
-            countryBorder
-              ?
-              <Link key={ index } to={ `/countries/detail/${bord}` }>
-                <MiniCard image={ countryBorder.image } officialName={ countryBorder.name.official } commonName={ countryBorder.name.common } />
-              </Link>
-              :
-              null
+        <div className={ style.bordersContainer }>
 
-          )
-        }) : <p>Don't have borders</p> }
+          { typeof borders !== "string" ? borders.map((bord, index) => {
+            const countryBorder = countries.find((border) => border.id === bord)
+            return (
+              countryBorder
+                ?
+                <Link key={ index } to={ `/countries/detail/${bord}` }>
+                  <MiniCard image={ countryBorder.image } officialName={ countryBorder.name.official } commonName={ countryBorder.name.common } />
+                </Link>
+                :
+                null
+
+            )
+          }) : <p>Don't have borders</p> }
+        </div>
       </div>
       <div className={ style.activitiesContainer }>
         <h2>Activities</h2>
+        <button onClick={ ()=>setActiveForm(true) }>Create activity</button>
         <hr />
+        { activities.length ? activities.map((act, i) => {
+          return (
+            <p key={ i }>{ act.name }</p> <button onClick={()=>}></button>
+          )
+        }) : null }
       </div>
 
     </div>
